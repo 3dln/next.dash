@@ -3,14 +3,38 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import ProTip from "../src/ProTip";
-import Link from "../src/Link";
 import Copyright from "../src/Copyright";
+import { Link } from "@material-ui/core";
+import { useRouter } from "next/router";
 
 const Code = (p) => <code {...p} />;
 
-export default function Index() {
+export default function Index(props) {
+  const router = useRouter();
+  const { locale, locales, defaultLocale } = router;
   return (
     <Container maxWidth="sm">
+      <div>
+        <h1>Index page</h1>
+        <p>Current locale: {locale}</p>
+        <p>Default locale: {defaultLocale}</p>
+        <p>Configured locales: {JSON.stringify(locales)}</p>
+
+        <Link href="/gsp">
+          <a>To getStaticProps page</a>
+        </Link>
+        <br />
+
+        <Link href="/gsp/first">
+          <a>To dynamic getStaticProps page</a>
+        </Link>
+        <br />
+
+        <Link href="/gssp">
+          <a>To getServerSideProps page</a>
+        </Link>
+        <br />
+      </div>
       <Box my={4}>
         <Typography variant="h4" component="h1" gutterBottom>
           Next.js example
