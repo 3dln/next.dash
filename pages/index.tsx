@@ -1,0 +1,73 @@
+import React from "react";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+import ProTip from "../src/ProTip";
+import Link from "../src/Link";
+import Copyright from "../src/Copyright";
+
+const Code = (p) => <code {...p} />;
+
+export default function Index() {
+  return (
+    <Container maxWidth="sm">
+      <Box my={4}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Next.js example
+        </Typography>
+        <Link href="/about" color="secondary">
+          Go to the about page
+        </Link>
+        <ProTip />
+        <Copyright />
+      </Box>
+      <table>
+        <thead>
+          <tr>
+            <th>Variable Name</th>
+            <th>Value</th>
+            <th>Added By</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NEXT_PUBLIC_ENV_VARIABLE</td>
+            <td>{process.env.NEXT_PUBLIC_ENV_VARIABLE}</td>
+            <td>
+              <Code>.env</Code>
+            </td>
+          </tr>
+          <tr>
+            <td>NEXT_PUBLIC_ENV_LOCAL_VARIABLE</td>
+            <td>{process.env.NEXT_PUBLIC_ENV_LOCAL_VARIABLE}</td>
+            <td>
+              <Code>.env.local</Code>
+            </td>
+          </tr>
+          <tr>
+            <td>NEXT_PUBLIC_DEVELOPMENT_ENV_VARIABLE</td>
+
+            <td>{process.env.NEXT_PUBLIC_DEVELOPMENT_ENV_VARIABLE}</td>
+            <td>
+              <Code>.env.development</Code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </Container>
+  );
+}
+
+// `getStaticProps`, and similar Next.js methods like `getStaticPaths` and `getServerSideProps`
+// only run in Node.js. Check the terminal to see the environment variables
+export async function getStaticProps() {
+  // Using the variables below in the browser will return `undefined`. Next.js doesn't
+  // expose environment variables unless they start with `NEXT_PUBLIC_`
+  console.log("[Node.js only] ENV_VARIABLE:", process.env.ENV_VARIABLE);
+  console.log(
+    "[Node.js only] ENV_LOCAL_VARIABLE:",
+    process.env.ENV_LOCAL_VARIABLE
+  );
+
+  return { props: {} };
+}
