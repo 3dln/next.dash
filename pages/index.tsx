@@ -6,8 +6,9 @@ import ProTip from "../src/ProTip";
 import Copyright from "../src/Copyright";
 import { Link } from "@material-ui/core";
 import { useRouter } from "next/router";
+import styles from "css/styles.module.css";
 
-const Code = (p) => <code {...p} />;
+const Code = (p) => <code className={styles.inlineCode} {...p} />;
 
 export default function Index(props) {
   const router = useRouter();

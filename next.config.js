@@ -4,4 +4,7 @@ module.exports = {
     locales: ["en", "fa"],
     defaultLocale: "fa",
   },
+  images: {
+    domains: ["assets.vercel.com"],
+  },
 };
