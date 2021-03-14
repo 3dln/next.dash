@@ -1,0 +1,2 @@
+{"level":"info","message":"[Node.js only] ENV_VARIABLE: server_only_variable"}
+{"level":"info","message":"[Node.js only] ENV_LOCAL_VARIABLE: server_only_variable_from_env_local"}

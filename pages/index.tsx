@@ -7,10 +7,11 @@ import Copyright from '../src/Copyright';
 import { Link } from '@material-ui/core';
 import { useRouter } from 'next/router';
 import styles from 'css/styles.module.css';
+import logger from 'utils/logger';
 
-const Code = (p) => <code className={styles.inlineCode} {...p} />;
+const Code = (p: { children: string }) => <code className={styles.inlineCode} {...p} />;
 
-export default function Index(props) {
+export default function Index() {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   return (
@@ -88,8 +89,8 @@ export default function Index(props) {
 export async function getStaticProps() {
   // Using the variables below in the browser will return `undefined`. Next.js doesn't
   // expose environment variables unless they start with `NEXT_PUBLIC_`
-  console.log('[Node.js only] ENV_VARIABLE:', process.env.ENV_VARIABLE);
-  console.log('[Node.js only] ENV_LOCAL_VARIABLE:', process.env.ENV_LOCAL_VARIABLE);
+  logger.log('info', `[Node.js only] ENV_VARIABLE: ${process.env.ENV_VARIABLE}`);
+  logger.log('info', `[Node.js only] ENV_LOCAL_VARIABLE: ${process.env.ENV_LOCAL_VARIABLE}`);
 
   return { props: {} };
 }
