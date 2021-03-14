@@ -5,7 +5,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 
-export default function MyApp(props) {
+export default function App(props) {
   const { Component, pageProps } = props;
 
   React.useEffect(() => {
@@ -31,7 +31,7 @@ export default function MyApp(props) {
   );
 }
 
-MyApp.propTypes = {
+App.propTypes = {
   Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.object.isRequired,
 };

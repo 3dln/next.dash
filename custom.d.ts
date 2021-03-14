@@ -1,5 +1,5 @@
-declare module "*.svg" {
-  import { FunctionComponent } from "react";
+declare module '*.svg' {
+  import { FunctionComponent } from 'react';
 
   const content: FunctionComponent<{
     className?: string;

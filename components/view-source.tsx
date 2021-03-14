@@ -1,4 +1,4 @@
-import styles from "./view-source.module.css";
+import styles from './view-source.module.css';
 
 const ViewSource = ({ pathname }) => (
   <svg
@@ -9,10 +9,7 @@ const ViewSource = ({ pathname }) => (
     fill="#151513"
     className={styles.svg}
   >
-    <a
-      title="View Source"
-      href={`https://github.com/vercel/next.js/tree/canary/examples/image-component/${pathname}`}
-    >
+    <a title="View Source" href={`https://github.com/vercel/next.js/tree/canary/examples/image-component/${pathname}`}>
       <path d="M0 0l115 115h15l12 27 108 108V0z" fill="#fff" />
       <path
         className={styles.arm}
