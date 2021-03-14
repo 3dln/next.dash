@@ -1,4 +1,10 @@
-# Next.js example
+# A next.js dashboard with typescript and material-ui
+
+##
+
+## TODO
+
+- google tag manager
 
 ## How to use
 
