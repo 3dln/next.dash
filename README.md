@@ -5,6 +5,8 @@
 ## TODO
 
 - google tag manager
+- global errorHandler middleware in development mode
+- add logger 
 
 ## How to use
 
