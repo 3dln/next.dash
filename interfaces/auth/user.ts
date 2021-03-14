@@ -1,6 +1,6 @@
 import { IAuthToken } from './token';
 
-type comparePasswordFunction = (candidatePassword: string, cb: (err: any, isMatch: any) => void) => void;
+export type comparePasswordFunction = (candidatePassword: string, cb: (err: any, isMatch: any) => void) => void;
 
 export enum Gender {
   Male = 'male',
