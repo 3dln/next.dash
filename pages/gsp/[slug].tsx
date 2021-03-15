@@ -1,11 +1,14 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { ILocaleProps, ILocales } from 'interfaces/app/props';
+import { AppProps } from 'next/app';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-export default function GspPage(props) {
+export default function GspPage(props: AppProps & ILocales): JSX.Element {
   const router = useRouter();
   const { defaultLocale, query, isFallback } = router;
 
-  if (isFallback) return "Loading...";
+  //TODO: add a dedicated component for loading messages
+  if (isFallback) return <div>'Loading...';</div>;
 
   return (
     <div>
@@ -33,7 +36,20 @@ export default function GspPage(props) {
   );
 }
 
-export const getStaticProps = ({ locale, locales }) => {
+interface IParam {
+  slug: string;
+}
+interface IPath {
+  params: IParam;
+  locale: string;
+}
+
+interface IPaths {
+  paths: IPath[];
+  fallback: boolean;
+}
+
+export const getStaticProps = ({ locale, locales }: ILocales): ILocaleProps => {
   return {
     props: {
       locale,
@@ -42,11 +58,11 @@ export const getStaticProps = ({ locale, locales }) => {
   };
 };
 
-export const getStaticPaths = ({ locales }) => {
+export const getStaticPaths = ({ locales = [] }: ILocales): IPaths => {
   const paths = [];
   for (const locale of locales) {
-    paths.push({ params: { slug: "first" }, locale });
-    paths.push({ params: { slug: "second" }, locale });
+    paths.push({ params: { slug: 'first' }, locale });
+    paths.push({ params: { slug: 'second' }, locale });
   }
 
   return { paths, fallback: true };

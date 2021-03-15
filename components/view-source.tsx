@@ -1,6 +1,11 @@
 import styles from './view-source.module.css';
+import PropTypes from 'prop-types';
 
-const ViewSource = ({ pathname }) => (
+interface IProps {
+  pathname: string;
+}
+
+const ViewSource = ({ pathname }: IProps): JSX.Element => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="80"
@@ -20,4 +25,7 @@ const ViewSource = ({ pathname }) => (
   </svg>
 );
 
+ViewSource.propTypes = {
+  pathname: PropTypes.string.isRequired,
+};
 export default ViewSource;

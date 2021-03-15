@@ -1,6 +1,7 @@
-import { useRouter } from "next/router";
+import { ILocaleProps, ILocales } from 'interfaces/app/props';
+import { useRouter } from 'next/router';
 
-const GsspPage = (props) => {
+const GsspPage = (props: ILocales): JSX.Element => {
   const router = useRouter();
   const { defaultLocale } = router;
 
@@ -14,7 +15,7 @@ const GsspPage = (props) => {
   );
 };
 
-export const getServerSideProps = ({ locale, locales }) => {
+export const getServerSideProps = ({ locale, locales }: ILocales): ILocaleProps => {
   return {
     props: {
       locale,

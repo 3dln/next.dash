@@ -2,7 +2,7 @@ import ViewSource from 'components/view-source';
 import styles from '../css/styles.module.css';
 import Image from 'next/image';
 
-const Background = () => {
+const Background = (): JSX.Element => {
   return (
     <div>
       <ViewSource pathname="pages/background.js" />
