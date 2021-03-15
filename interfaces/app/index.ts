@@ -7,6 +7,8 @@ enum DeviceType {
 interface IAppConfig {
   title: string;
   version: number;
+  logs_dir: string;
+  logs_file: string;
 }
 interface IAuthConfig {
   salt_rounds: number;

@@ -27,6 +27,8 @@ const config: IConfig = {
   app: {
     title: '',
     version: 0.1,
+    logs_dir: 'logs',
+    logs_file: 'debug.log',
   },
   auth: {
     salt_rounds: 10,
