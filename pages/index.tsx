@@ -16,7 +16,7 @@ export default function Index() {
   const { locale, locales, defaultLocale } = router;
   return (
     <Container maxWidth="sm">
-      <div>
+      <div className="bg-red-100 p-10 mt-20">
         <h1>Index page</h1>
         <p>Current locale: {locale}</p>
         <p>Default locale: {defaultLocale}</p>
