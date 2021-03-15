@@ -32,6 +32,11 @@ const config: IConfig = {
   },
   auth: {
     salt_rounds: 10,
+    facebook: {
+      callback_url: '/auth/facebook/callback',
+      profile_fields: ['name', 'email', 'link', 'locale', 'timezone'],
+      pass_req_to_callback: true,
+    },
   },
   user: {
     gravatar_size: 200,

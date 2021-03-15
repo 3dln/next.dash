@@ -29,6 +29,6 @@ export interface IUserBase {
 }
 
 export interface IUser extends IUserBase {
-  comparePassword?: comparePasswordFunction;
+  comparePassword: comparePasswordFunction;
   gravatar?: (size: number) => string;
 }
